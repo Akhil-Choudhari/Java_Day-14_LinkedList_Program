@@ -24,4 +24,22 @@ public class LinkedList<T>{
 		}
 		position++;
 	}
+	public void remove(T data){
+		Node<T> tempCurrent = head;
+		Node<T> tempPrev = null;
+		while(!tempCurrent.data.equals(data)){
+			tempPrev = tempCurrent;
+			tempCurrent = tempCurrent.next;
+		}
+		if(tempCurrent == head){
+			head = head.next;
+		}
+		else{
+			tempPrev.next = tempCurrent.next;
+		}
+		if(tempCurrent == current){
+			current = tempPrev;
+		}
+		position--;
+	}
 }
