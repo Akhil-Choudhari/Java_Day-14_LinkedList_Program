@@ -125,4 +125,20 @@ public class LinkedList<T>{
 			return tempCurrent.data;
 		}
 	}
+	public T pop(){
+		return pop(position);
+	}
+	
+	public T get(int location) {
+		Node<T> tempCurrent = head;
+		int tempPosition = 0;
+		
+		while(tempPosition != location){
+			tempCurrent = tempCurrent.next;
+			tempPosition++;
+		}
+		
+		return tempCurrent.data;
+		
+	}
 }
