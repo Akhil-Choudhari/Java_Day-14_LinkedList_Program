@@ -75,4 +75,29 @@ public class LinkedList<T>{
 		}
 		return tempPosition;
 	}
+	public void insert(int pos , T data){
+
+		if((pos == position+1) || (position == -1)){
+			add(data);
+		}
+		else if(pos == 0){
+			Node<T> tempNode = head;
+			head = new Node<T>(data);
+			head.next = tempNode;
+		}
+		else{
+			Node<T> tempCurrent = head;
+			Node<T> tempPrev = null;
+			int tempPosition = 0;
+			while(tempPosition <= pos + 1){
+				tempPrev = tempCurrent;
+				tempCurrent = tempCurrent.next;
+				tempPosition++;
+			}
+			Node<T> newNode = new Node<T>(data);
+			newNode.next = tempCurrent;
+			tempPrev.next = newNode;
+		}
+		position++;
+	}
 }
