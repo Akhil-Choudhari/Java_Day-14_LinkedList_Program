@@ -141,4 +141,12 @@ public class LinkedList<T>{
 		return tempCurrent.data;
 		
 	}
+	public void list(){
+		Node<T> tempCurrent = head;
+		while(tempCurrent != null){
+			System.out.println(tempCurrent.data);
+			tempCurrent = tempCurrent.next;
+		}
+	}	
+}
 }
