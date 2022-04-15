@@ -55,4 +55,24 @@ public class LinkedList<T>{
 	public int size(){
 		return position + 1;
 	}
+	public void append(T data){
+		add(data);
+	}
+
+	public int index(T data){
+		if(position == -1){
+			return -1;
+		}
+		Node<T> tempCurrent = head;
+		int tempPosition = 0;
+		
+		while(!tempCurrent.data.equals(data)){
+			if(tempCurrent == current) {
+				return -1;
+			}
+			tempCurrent = tempCurrent.next;
+			tempPosition++;
+		}
+		return tempPosition;
+	}
 }
