@@ -42,4 +42,4 @@ public class LinkedList<T>{
 		}
 		position--;
 	}
-}
+
