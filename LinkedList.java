@@ -42,4 +42,17 @@ public class LinkedList<T>{
 		}
 		position--;
 	}
+	public boolean search(T data){
+		return index(data) == -1 ? false : true; 
+	}
+	
 
+	public boolean isEmpty(){
+		return position == -1 ? true : false;
+	}
+
+	
+	public int size(){
+		return position + 1;
+	}
+}
