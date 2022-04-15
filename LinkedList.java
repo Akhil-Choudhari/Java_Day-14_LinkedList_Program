@@ -99,5 +99,30 @@ public class LinkedList<T>{
 			tempPrev.next = newNode;
 		}
 		position++;
+
+}
+	public T pop(int location){
+		Node<T> tempCurrent = head;
+		Node<T> tempPrev = null;
+		int tempPosition = 0;
+		position--;
+		while(tempPosition != location){
+			tempPrev = tempCurrent;
+			tempCurrent = tempCurrent.next;
+			tempPosition++;
+		}
+		if(tempCurrent == head){
+			head = head.next;
+			return tempCurrent.data;
+		}
+		else if(tempCurrent == current){
+			current = tempPrev;
+			tempPrev.next = tempCurrent.next;
+			return tempCurrent.data;
+		}
+		else{
+			tempPrev.next = tempCurrent.next;
+			return tempCurrent.data;
+		}
 	}
 }
